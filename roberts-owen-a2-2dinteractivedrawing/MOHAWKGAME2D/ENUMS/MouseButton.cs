@@ -5,48 +5,49 @@
 /* Source: https://github.com/MohawkRaphaelT/game10003-2d-game-template
 /*////////////////////////////////////////////////////////////////////////
 
-namespace MohawkGame2D;
-
-/// <summary>
-///     Defines mouse buttons.
-/// </summary>
-/// <remarks>
-///     Wrapper around Raylib's MouseButton
-/// </remarks>
-public enum MouseButton
+namespace MohawkGame2D
 {
     /// <summary>
-    ///     Left mouse button.
+    ///     Defines mouse buttons.
     /// </summary>
-    Left = 0,
+    /// <remarks>
+    ///     Wrapper around Raylib's MouseButton
+    /// </remarks>
+    public enum MouseButton
+    {
+        /// <summary>
+        ///     Left mouse button.
+        /// </summary>
+        Left = 0,
 
-    /// <summary>
-    ///     Right mouse button.
-    /// </summary>
-    Right = 1,
+        /// <summary>
+        ///     Right mouse button.
+        /// </summary>
+        Right = 1,
 
-    /// <summary>
-    ///     Middle mouse button.
-    /// </summary>
-    Middle = 2,
+        /// <summary>
+        ///     Middle mouse button.
+        /// </summary>
+        Middle = 2,
 
-    /// <summary>
-    ///     Side mouse button.
-    /// </summary>
-    Side = 3,
+        /// <summary>
+        ///     Side mouse button.
+        /// </summary>
+        Side = 3,
 
-    /// <summary>
-    ///     Extra mouse button extra.
-    /// </summary>
-    Extra = 4,
+        /// <summary>
+        ///     Extra mouse button extra.
+        /// </summary>
+        Extra = 4,
 
-    /// <summary>
-    ///     Forward mouse button.
-    /// </summary>
-    Forward = 5,
+        /// <summary>
+        ///     Forward mouse button.
+        /// </summary>
+        Forward = 5,
 
-    /// <summary>
-    ///     Back mouse button.
-    /// </summary>
-    Back = 6
+        /// <summary>
+        ///     Back mouse button.
+        /// </summary>
+        Back = 6
+    }
 }

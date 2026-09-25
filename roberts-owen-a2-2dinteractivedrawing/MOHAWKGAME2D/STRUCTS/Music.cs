@@ -5,64 +5,65 @@
 /* Source: https://github.com/MohawkRaphaelT/game10003-2d-game-template
 /*////////////////////////////////////////////////////////////////////////
 
-namespace MohawkGame2D;
-
-/// <summary>
-///     Represents a music file (audio over 10s long).
-/// </summary>
-/// <remarks>
-///     Wrapper around Raylib.Music
-/// </remarks>
-public struct Music
+namespace MohawkGame2D
 {
-    private Raylib_cs.Music music;
-
     /// <summary>
-    ///     File path of this music.
+    ///     Represents a music file (audio over 10s long).
     /// </summary>
-    public string FilePath { get; init; }
-
-    /// <summary>
-    ///     Name of this music file.
-    /// </summary>
-    public string FileName { get; init; }
-
-    /// <summary>
-    ///     Whether or not the music file loops.
-    /// </summary>
-    public bool Looping
+    /// <remarks>
+    ///     Wrapper around Raylib.Music
+    /// </remarks>
+    public struct Music
     {
-        readonly get => music.Looping;
-        set => music.Looping = value;
-    }
+        private Raylib_cs.Music music;
 
-    [GeneratorTools.OmitFromDocumentation]
-    public Raylib_cs.Music RaylibMusic
-    {
-        readonly get => music;
-        init => music = value;
-    }
+        /// <summary>
+        ///     File path of this music.
+        /// </summary>
+        public string FilePath { get; init; }
 
-    [GeneratorTools.OmitFromDocumentation]
-    public static implicit operator Music(Raylib_cs.Music raylibMusic)
-    {
-        var music = new Music()
+        /// <summary>
+        ///     Name of this music file.
+        /// </summary>
+        public string FileName { get; init; }
+
+        /// <summary>
+        ///     Whether or not the music file loops.
+        /// </summary>
+        public bool Looping
         {
-            RaylibMusic = raylibMusic,
-        };
-        return music;
-    }
+            readonly get => music.Looping;
+            set => music.Looping = value;
+        }
 
-    [GeneratorTools.OmitFromDocumentation]
-    public static implicit operator Raylib_cs.Music(Music music)
-    {
-        var raylibMusic = music.RaylibMusic;
-        return raylibMusic;
-    }
+        [GeneratorTools.OmitFromDocumentation]
+        public Raylib_cs.Music RaylibMusic
+        {
+            readonly get => music;
+            init => music = value;
+        }
 
-    public override readonly string ToString()
-    {
-        string value = $"{nameof(Music)}({FilePath})";
-        return value;
+        [GeneratorTools.OmitFromDocumentation]
+        public static implicit operator Music(Raylib_cs.Music raylibMusic)
+        {
+            var music = new Music()
+            {
+                RaylibMusic = raylibMusic,
+            };
+            return music;
+        }
+
+        [GeneratorTools.OmitFromDocumentation]
+        public static implicit operator Raylib_cs.Music(Music music)
+        {
+            var raylibMusic = music.RaylibMusic;
+            return raylibMusic;
+        }
+
+        public override readonly string ToString()
+        {
+            string value = $"{nameof(Music)}({FilePath})";
+            return value;
+        }
     }
 }

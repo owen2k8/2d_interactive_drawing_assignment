@@ -5,50 +5,51 @@
 /* Source: https://github.com/MohawkRaphaelT/game10003-2d-game-template
 /*////////////////////////////////////////////////////////////////////////
 
-namespace MohawkGame2D;
-
-/// <summary>
-///     Represents a sound file (audio 10s or less).
-/// </summary>
-/// <remarks>
-///     Wrapper around Raylib.Sound
-/// </remarks>
-public readonly record struct Sound
+namespace MohawkGame2D
 {
     /// <summary>
-    ///     File path of this sound.
+    ///     Represents a sound file (audio 10s or less).
     /// </summary>
-    public string FilePath { get; init; }
-
-    /// <summary>
-    ///     Name of this sound file.
-    /// </summary>
-    public string FileName { get; init; }
-
-
-    [GeneratorTools.OmitFromDocumentation]
-    public Raylib_cs.Sound RaylibSound { get; init; }
-
-    [GeneratorTools.OmitFromDocumentation]
-    public static implicit operator Sound(Raylib_cs.Sound raylibSound)
+    /// <remarks>
+    ///     Wrapper around Raylib.Sound
+    /// </remarks>
+    public readonly record struct Sound
     {
-        var font = new Sound()
+        /// <summary>
+        ///     File path of this sound.
+        /// </summary>
+        public string FilePath { get; init; }
+
+        /// <summary>
+        ///     Name of this sound file.
+        /// </summary>
+        public string FileName { get; init; }
+
+
+        [GeneratorTools.OmitFromDocumentation]
+        public Raylib_cs.Sound RaylibSound { get; init; }
+
+        [GeneratorTools.OmitFromDocumentation]
+        public static implicit operator Sound(Raylib_cs.Sound raylibSound)
         {
-            RaylibSound = raylibSound,
-        };
-        return font;
-    }
+            var font = new Sound()
+            {
+                RaylibSound = raylibSound,
+            };
+            return font;
+        }
 
-    [GeneratorTools.OmitFromDocumentation]
-    public static implicit operator Raylib_cs.Sound(Sound sound)
-    {
-        var raylibSound = sound.RaylibSound;
-        return raylibSound;
-    }
+        [GeneratorTools.OmitFromDocumentation]
+        public static implicit operator Raylib_cs.Sound(Sound sound)
+        {
+            var raylibSound = sound.RaylibSound;
+            return raylibSound;
+        }
 
-    public override readonly string ToString()
-    {
-        string value = $"{nameof(Sound)}({FilePath})";
-        return value;
+        public override readonly string ToString()
+        {
+            string value = $"{nameof(Sound)}({FilePath})";
+            return value;
+        }
     }
 }

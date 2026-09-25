@@ -5,20 +5,21 @@
 /* Source: https://github.com/MohawkRaphaelT/game10003-2d-game-template
 /*////////////////////////////////////////////////////////////////////////
 
-namespace MohawkGame2D;
-
-/// <summary>
-///     Mode for drawing polygons.
-/// </summary>
-public enum PolygoneMode
+namespace MohawkGame2D
 {
     /// <summary>
-    ///     Draw polygon touching outside bound of radius.
+    ///     Mode for drawing polygons.
     /// </summary>
-    OutsideRadius,
+    public enum PolygoneMode
+    {
+        /// <summary>
+        ///     Draw polygon touching outside bound of radius.
+        /// </summary>
+        OutsideRadius,
 
-    /// <summary>
-    ///     Draw polygon touching inside bound of radius.
-    /// </summary>
-    InsideRadius,
+        /// <summary>
+        ///     Draw polygon touching inside bound of radius.
+        /// </summary>
+        InsideRadius,
+    }
 }
